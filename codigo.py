@@ -111,7 +111,7 @@ class Artista(ItemMusical):
         self.canciones = canciones
 
     def _promediar_caracteristica(self, caracteristica: str, is_sonoro: bool) -> float:
-        # Programación Funcional: Uso de map y reduce para calcular promedios
+        
         if not self.canciones:
             return 0.0
         try:
@@ -226,7 +226,7 @@ class SentimentalesHandler(HandlerEstadisticos):
         caracteristicas = ["felicidad", "bailabilidad", "energia"]
         try:
             for feat in caracteristicas:
-                # Programación Funcional: map para extraer características
+                
                 valores = list(map(lambda c: c.get_sentimentales()[feat], sesion.historial_canciones))
                 sesion.estadisticas_sentimentales[feat] = _calcular_med_desv(valores)
         except KeyError as e:
